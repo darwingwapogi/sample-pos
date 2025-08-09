@@ -1,0 +1,20 @@
+{
+  "_comment": "This file contains a list of categories for the database seeder.",
+  "categories": [
+      { "name": "Sand And Gravel" },
+      { "name": "Hardware" },
+      { "name": "Construction" },
+      { "name": "Equipment" },
+      { "name": "Tools" },
+      { "name": "Paint" },
+      { "name": "Cement" },
+      { "name": "Hollow Block" },
+      { "name": "Roofing" },
+      { "name": "Plumbing" },
+      { "name": "Electrical" },
+      { "name": "Electronics" },
+      { "name": "Furniture" },
+      { "name": "Clothing" },
+      { "name": "Electronics" }
+  ]
+}

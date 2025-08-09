@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  webserver:
+    image: nginx:stable-alpine
+    container_name: ddr3_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - ddr3-network
+
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: ddr3-php
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - ddr3-network
+
+  composer:
+    image: composer:latest
+    container_name: ddr3-composer
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - ddr3-network
+
+  npm:
+    image: node:21
+    container_name: ddr3-npm
+    volumes:
+      - .:/var/www/html
+    entrypoint: ['npm']
+
+  artisan:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: ddr3-artisan
+    volumes: 
+      - .:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']
+    networks:
+      - ddr3-network
+
+networks:
+  ddr3-network:

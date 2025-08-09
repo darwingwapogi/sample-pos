@@ -1,0 +1,94 @@
+{
+    "units": {
+        "stock": {
+            "inventory_unit": [
+                { "name": "piece", "symbol": "pc" },
+                { "name": "dozen", "symbol": "dz" },
+                { "name": "box", "symbol": "box" },
+                { "name": "pack", "symbol": "pack" },
+                { "name": "bottle", "symbol": "btl" },
+                { "name": "can", "symbol": "can" },
+                { "name": "bag", "symbol": "bag" },
+                { "name": "roll", "symbol": "roll" },
+                { "name": "bundle", "symbol": "bdl" },
+                { "name": "tube", "symbol": "tube" },
+                { "name": "sack", "symbol": "sack" },
+                { "name": "carton", "symbol": "ctn" },
+                { "name": "pallet", "symbol": "plt" }
+            ]
+        },
+        "length": {
+            "metric": [
+                { "name": "nanometer", "symbol": "nm" },
+                { "name": "micrometer", "symbol": "µm" },
+                { "name": "millimeter", "symbol": "mm" },
+                { "name": "centimeter", "symbol": "cm" },
+                { "name": "meter", "symbol": "m" },
+                { "name": "kilometer", "symbol": "km" }
+            ],
+            "imperial": [
+                { "name": "thou", "symbol": "mil" },
+                { "name": "inch", "symbol": "in" },
+                { "name": "foot", "symbol": "ft" },
+                { "name": "yard", "symbol": "yd" },
+                { "name": "mile", "symbol": "mi" },
+                { "name": "furlong", "symbol": "furlong" },
+                { "name": "chain", "symbol": "chain" }
+            ]
+        },
+        "mass": {
+            "metric": [
+                { "name": "microgram", "symbol": "µg" },
+                { "name": "milligram", "symbol": "mg" },
+                { "name": "gram", "symbol": "g" },
+                { "name": "kilogram", "symbol": "kg" },
+                { "name": "metric ton", "symbol": "t" }
+            ],
+            "imperial": [
+                { "name": "grain", "symbol": "grain" },
+                { "name": "ounce", "symbol": "oz" },
+                { "name": "pound", "symbol": "lb" },
+                { "name": "stone", "symbol": "st" },
+                { "name": "short ton", "symbol": "ton (US)" },
+                { "name": "long ton", "symbol": "ton (UK)" }
+            ]
+        },
+        "size": {
+            "area": {
+                "metric": [
+                    { "name": "square millimeter", "symbol": "mm²" },
+                    { "name": "square centimeter", "symbol": "cm²" },
+                    { "name": "square meter", "symbol": "m²" },
+                    { "name": "hectare", "symbol": "ha" },
+                    { "name": "square kilometer", "symbol": "km²" }
+                ],
+                "imperial": [
+                    { "name": "square inch", "symbol": "in²" },
+                    { "name": "square foot", "symbol": "ft²" },
+                    { "name": "square yard", "symbol": "yd²" },
+                    { "name": "acre", "symbol": "acre" },
+                    { "name": "square mile", "symbol": "mi²" }
+                ]
+            },
+            "volume": {
+                "metric": [
+                    { "name": "milliliter", "symbol": "mL" },
+                    { "name": "centiliter", "symbol": "cL" },
+                    { "name": "liter", "symbol": "L" },
+                    { "name": "cubic centimeter", "symbol": "cm³" },
+                    { "name": "cubic meter", "symbol": "m³" }
+                ],
+                "imperial": [
+                    { "name": "teaspoon", "symbol": "tsp" },
+                    { "name": "tablespoon", "symbol": "tbsp" },
+                    { "name": "fluid ounce", "symbol": "fl oz" },
+                    { "name": "cup", "symbol": "cup" },
+                    { "name": "pint", "symbol": "pt" },
+                    { "name": "quart", "symbol": "qt" },
+                    { "name": "gallon", "symbol": "gal" }
+                ]
+            }
+        }
+    }
+}
+

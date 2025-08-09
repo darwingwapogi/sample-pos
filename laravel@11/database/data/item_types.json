@@ -1,0 +1,13 @@
+{
+  "_comment": "This file contains a list of item types for the database seeder.",
+  "item_types": [
+    { "name": "Electronics", "description": "Devices and gadgets" },
+    { "name": "Furniture", "description": "Home and office furniture" },
+    { "name": "Tools", "description": "Hand and power tools" },
+    { "name": "Paint", "description": "Interior and exterior paints" },
+    { "name": "Plumbing", "description": "Pipes, fittings, and fixtures" },
+    { "name": "Electrical", "description": "Wiring, outlets, and switches" },
+    { "name": "Lumber", "description": "Wood and building materials" },
+    { "name": "Hardware", "description": "Nails, screws, and fasteners" }
+  ]
+}

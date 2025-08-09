@@ -1,0 +1,7 @@
+{
+  "payment_methods": [
+    "Cash",
+    "Credit",
+    "Bank"
+  ]
+}

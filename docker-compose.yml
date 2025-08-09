@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  nginx-proxy:
+      image: jwilder/nginx-proxy
+      container_name: nginx-proxy
+      ports:
+        - "80:80"
+        - "443:443"
+      networks:
+        ddr3-network:
+          ipv4_address: 172.28.0.3
+      volumes:
+        - ./docker/nginx/nginx.tmpl:/app/nginx.tmpl
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+        - ./docker/certs:/etc/nginx/certs
+      environment:
+        - TRUST_DOWNSTREAM_PROXY=false
+
+  web:
+    container_name: web
+    build:
+     context : ./docker
+    image: php8.2/ddr3-web
+    environment:
+      - CONTAINER_TIMEZONE=Asia/Manila
+      - WORKING_PATH=${WORKING_PATH}
+      - VIRTUAL_HOST=ddr3.solutions.com
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=443
+      - HTTPS_METHOD=redirect
+      - CERT_NAME=ddr3.solutions.com
+    volumes:
+      - ${NGINX_LOGS}:/var/log/nginx:rw
+      - ${NGINX_LOGS}:/var/log/php8.2-fpm-ddr3:rw
+      - ./laravel@11/app:${WORKING_PATH}/app
+      - ./laravel@11/bootstrap:${WORKING_PATH}/bootstrap
+      - ./laravel@11/config:${WORKING_PATH}/config
+      - ./laravel@11/database:${WORKING_PATH}/database
+      - ./laravel@11/public:${WORKING_PATH}/public
+      - ./laravel@11/resources:${WORKING_PATH}/resources
+      - ./laravel@11/routes:${WORKING_PATH}/routes
+      - ./laravel@11/src:${WORKING_PATH}/src
+      - ./laravel@11/tests:${WORKING_PATH}/tests
+      - ./laravel@11/storage/logs:${WORKING_PATH}/storage/logs
+      - ./laravel@11/.env:${WORKING_PATH}/.env
+      - ./laravel@11/artisan:${WORKING_PATH}/artisan
+      - ./laravel@11/composer.json:${WORKING_PATH}/composer.json
+      - ./laravel@11/composer.lock:${WORKING_PATH}/composer.lock
+      - ./laravel@11/package.json:${WORKING_PATH}/package.json
+      - ./laravel@11/package-lock.json:${WORKING_PATH}/package-lock.json
+      - ./laravel@11/vite.config.js:${WORKING_PATH}/vite.config.js
+      - ./docker/nginx/nginx.conf:/etc/nginx/sites-enabled/nginx.conf
+    networks:
+      ddr3-network:   
+        ipv4_address: 172.28.0.2
+
+networks:
+  ddr3-network:
+    driver_opts:
+      com.docker.network.bridge.name: ddr3-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16

@@ -1,0 +1,16 @@
+{
+  "invoice_statuses": [
+    "Draft",
+    "Pending",
+    "Sent",
+    "Viewed",
+    "Partially Paid",
+    "Paid",
+    "Overdue",
+    "Canceled",
+    "Refunded",
+    "Failed",
+    "Disputed",
+    "Written Off"
+  ]
+}

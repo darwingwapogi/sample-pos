@@ -1,0 +1,11 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Morries Grail Sand and Gravel",
+      "abbr": "MGSAG",
+      "email": "mgsag@company.com",
+      "address_line1": "Kidapawan, North Cotabato, Philippines"
+    }
+  ]
+}

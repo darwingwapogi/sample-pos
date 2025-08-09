@@ -1,0 +1,7 @@
+{
+  "payment_statuses": [
+    "Pending",
+    "Partially paid",
+    "Paid"
+  ]
+}

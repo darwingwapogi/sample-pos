@@ -1,0 +1,13 @@
+{
+  "transaction_types": [
+    { "name": "Sale", "description": "A regular product purchase." },
+    { "name": "Return", "description": "Item returned by the customer." },
+    { "name": "Exchange", "description": "Replacing an item with another." },
+    { "name": "Layaway", "description": "Partial payment for a future purchase." },
+    { "name": "Void", "description": "Canceled transaction before finalizing." },
+    { "name": "Refund", "description": "Reversing a completed transaction." },
+    { "name": "Discounted Sale", "description": "A sale with a price discount applied." },
+    { "name": "Store Credit Redemption", "description": "Using store credit for a purchase." },
+    { "name": "Manual Adjustment", "description": "Correction of transaction errors." }
+  ]
+}

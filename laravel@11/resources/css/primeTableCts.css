@@ -1,0 +1,45 @@
+.small-font-table {
+    font-size: 0.8rem;
+}
+.small-font-table .p-datatable-thead > tr > th {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    height: 2rem;
+}
+.small-font-table .p-datatable-tbody > tr > td {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    height: 2rem;
+}
+.small-font-table .p-datatable-tbody > tr > td > button {
+    font-size: 0.8rem;
+    padding: 1px 5px;
+}
+.small-font-table .p-datatable-tbody > tr > td > input {
+    font-size: 0.8rem;
+    padding: 2px 5px;
+}
+.small-font-table .p-datatable-tbody > tr > td > select {
+    font-size: 0.8rem;
+    padding: 0;
+}
+.small-font-table .p-datatable-tbody > tr > td > textarea {
+    font-size: 0.8rem;
+    padding: 0;
+}
+.small-font-table .p-datatable-tbody > tr > td > .p-inputtext {
+    font-size: 0.8rem;
+    padding: 0;
+}
+.small-font-table .p-datatable-tbody > tr > td > .p-dropdown {
+    font-size: 0.8rem;
+    padding: 0;
+}
+.small-font-table .p-datatable-tbody > tr > td > .p-calendar {
+    font-size: 0.8rem;
+    padding: 0;
+}
+.small-font-table .p-datatable-tbody > tr > td > .p-inputswitch {
+    font-size: 0.8rem;
+    padding: 0;
+}

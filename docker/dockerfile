@@ -1,0 +1,81 @@
+# Created By: Darwin Casanova
+# Dated: May 3, 2024
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV HOME_DIR=/
+
+WORKDIR $HOME_DIR
+
+# Update Ubuntu Software repository and install necessary packages
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    apt-transport-https \
+    nano \
+    vim \
+    curl \
+    ca-certificates \
+    openssl \
+    git \
+    iputils-ping \
+    net-tools \
+    telnet \
+    htop \
+    sudo \
+    wget \
+    cron
+
+# Add PHP repository
+RUN add-apt-repository -y ppa:ondrej/php && apt-get update
+
+ARG VER=8.2
+
+# Install nginx and PHP with extensions
+RUN apt-get install -y \
+    nginx \
+    php${VER} \
+    php${VER}-bcmath \
+    php${VER}-cli \
+    php${VER}-common \
+    php${VER}-curl \
+    php${VER}-fpm \
+    php${VER}-gd \
+    php${VER}-intl \
+    php${VER}-mbstring \
+    php${VER}-memcached \
+    php${VER}-opcache \
+    php${VER}-mysql \
+    php${VER}-xml \
+    php${VER}-xmlrpc \
+    php${VER}-imap \
+    php${VER}-zip \
+    php${VER}-pgsql
+
+RUN apt-get install -y cron supervisor
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer 
+
+# Install NVM (Node Version Manager) and use it to install Node.js
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && \
+    export NVM_DIR="$HOME/.nvm" && \
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
+    nvm install 18 && \
+    nvm install 20 && \
+    nvm alias default 18
+
+COPY certs/certificate.cnf /etc/ssl/certificate.cnf
+COPY certs/ddr3.solutions.com.key /etc/ssl/private/ddr3.solutions.com.key
+COPY certs/ddr3.solutions.com.crt /etc/ssl/private/ddr3.solutions.com.crt
+COPY certs/ddr3.solutions.com.crt /usr/local/share/ca-certificates/ddr3.solutions.com.crt
+
+RUN update-ca-certificates
+
+# Expose ports
+EXPOSE 80 443
+
+# Set up entrypoint script
+RUN mkdir -p /config
+COPY start.sh /config/
+RUN chmod +x /config/start.sh
+
+ENTRYPOINT ["/config/start.sh"]

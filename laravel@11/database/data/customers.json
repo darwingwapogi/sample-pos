@@ -1,0 +1,94 @@
+{
+    "customers": [
+        {
+            "fname": "walkin",
+            "mname": null,
+            "lname": null,
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-07-09 13:14:22",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "BOSSING",
+            "mname": "vic",
+            "lname": "Kabisote",
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-07-09 13:18:41",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "DARROS",
+            "mname": "francis",
+            "lname": "dahon",
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-07-09 14:14:14",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "johnson",
+            "mname": "d",
+            "lname": "prime",
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-07-09 14:21:02",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "Ferrel",
+            "mname": "n",
+            "lname": "whelles",
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-07-09 14:44:00",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "nana",
+            "mname": "ban",
+            "lname": "perme",
+            "address": "SINGKATULAN PUSO",
+            "gender": "female",
+            "birth_date": "2022-08-01 09:10:13",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "ALJON",
+            "mname": "s",
+            "lname": "baracoda",
+            "address": "isla jardin, south cotabato",
+            "gender": "MALE",
+            "birth_date": "2022-08-01 09:30:08",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "BUILDING",
+            "mname": "w",
+            "lname": "dumdum",
+            "address": "new liko, street",
+            "gender": "MALE",
+            "birth_date": "2022-08-01 09:46:34",
+            "contact": "09335461246",
+            "encoder": "admin"
+        },
+        {
+            "fname": "meme",
+            "mname": "t",
+            "lname": "tokyo",
+            "address": "N/A",
+            "gender": "MALE",
+            "birth_date": "2022-08-01 10:54:31",
+            "contact": "09335461246",
+            "encoder": "admin"
+        }
+    ]
+}
